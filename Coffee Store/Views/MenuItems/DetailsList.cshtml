@@ -1,0 +1,222 @@
+﻿@model IEnumerable<Coffee_Store.Models.MenuItem>
+@{
+    ViewData["Title"] = "Details Selection";
+}
+
+<style>
+    .details-selection-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+    }
+
+    .admin-panel {
+        background-color: #fff8f3;
+        border-radius: 15px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .admin-info {
+        background-color: #ffffff;
+        padding: 1rem;
+        border-radius: 8px;
+        margin-bottom: 1rem;
+        border-left: 4px solid #c0a080;
+    }
+
+    .page-title {
+        color: #2c1810;
+        font-size: 2rem;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    .items-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+
+    .menu-item {
+        background: white;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+        position: relative;
+    }
+
+        .menu-item:hover {
+            transform: translateY(-5px);
+        }
+
+    .item-image {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-bottom: 3px solid #c0a080;
+    }
+
+    .item-content {
+        padding: 1.5rem;
+    }
+
+    .item-name {
+        font-size: 1.25rem;
+        color: #2c1810;
+        margin-bottom: 0.5rem;
+    }
+
+    .item-description {
+        color: #666;
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .item-category {
+        display: inline-block;
+        background-color: #fff8f3;
+        color: #c0a080;
+        padding: 0.25rem 0.75rem;
+        border-radius: 15px;
+        font-size: 0.875rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .item-price {
+        color: #c0a080;
+        font-weight: 600;
+        font-size: 1.125rem;
+        margin: 0.5rem 0;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 0.75rem 1.5rem;
+        border-radius: 8px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        font-weight: 500;
+        text-align: center;
+    }
+
+    .btn-back {
+        background-color: #6c757d;
+        color: white;
+        margin-right: 1rem;
+    }
+
+    .btn-details {
+        background-color: #c0a080;
+        color: white;
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    .btn:hover {
+        transform: translateY(-2px);
+        opacity: 0.9;
+    }
+
+    .actions {
+        margin-top: 1rem;
+        display: flex;
+        gap: 0.5rem;
+    }
+
+    .no-items {
+        text-align: center;
+        padding: 2rem;
+        background: white;
+        border-radius: 12px;
+        margin-top: 1rem;
+    }
+
+    .created-at {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        background: rgba(44, 24, 16, 0.8);
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 15px;
+        font-size: 0.8rem;
+        backdrop-filter: blur(5px);
+    }
+
+    .time-label, .user-label {
+        color: #2c1810;
+        font-weight: 600;
+    }
+
+    .time-value, .user-value {
+        color: #666;
+    }
+</style>
+
+<div class="details-selection-container">
+    <div class="admin-panel">
+        <h1 class="page-title">Menu Items Details</h1>
+
+        <div class="admin-info">
+            <p>
+                <span class="time-label">Current Date and Time (UTC - YYYY-MM-DD HH:MM:SS formatted):</span>
+                <span class="time-value">@DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss")</span>
+            </p>
+            <p>
+                <span class="user-label">Current User's Login:</span>
+                <span class="user-value">@ViewBag.CurrentUser</span>
+            </p>
+        </div>
+
+        <div class="actions">
+            <a asp-action="Index" class="btn btn-back">
+                <i class="fas fa-arrow-left"></i> Back to Menu
+            </a>
+        </div>
+
+        @if (Model != null && Model.Any())
+        {
+            <div class="items-grid">
+                @foreach (var item in Model)
+                {
+                    <div class="menu-item">
+                        <span class="created-at">Created: @item.CreatedAt.ToString("dd.MM.yyyy")</span>
+                        @if (!string.IsNullOrEmpty(item.Image))
+                        {
+                            <img src="@item.Image" alt="@item.Name" class="item-image"
+                                 onerror="this.src='/images/default-menu-item.jpg'" />
+                        }
+                        else
+                        {
+                            <img src="/images/default-menu-item.jpg" alt="Default" class="item-image" />
+                        }
+                        <div class="item-content">
+                            <span class="item-category">@item.Category</span>
+                            <h3 class="item-name">@item.Name</h3>
+                            <p class="item-description">@item.Description</p>
+                            <p class="item-price">$@item.Price.ToString("F2")</p>
+                            <a asp-action="Details" asp-route-id="@item.MenuItemId" class="btn btn-details">
+                                <i class="fas fa-info-circle"></i> View Details
+                            </a>
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+        else
+        {
+            <div class="no-items">
+                <h3>No Items Available</h3>
+                <p>There are currently no menu items available to view.</p>
+            </div>
+        }
+    </div>
+</div>

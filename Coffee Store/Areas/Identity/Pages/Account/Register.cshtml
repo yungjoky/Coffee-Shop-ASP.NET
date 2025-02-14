@@ -1,0 +1,254 @@
+﻿@page
+@model RegisterModel
+@{
+    ViewData["Title"] = "Register - Brew Haven";
+}
+
+<style>
+    .register-container {
+        min-height: 100vh;
+        background: linear-gradient(rgba(244, 235, 228, 0.9), rgba(244, 235, 228, 0.9)), url('https://images.unsplash.com/photo-1482350325005-eda05cb437c3');
+        /* Changed the gradient overlay to be more beige and transparent */
+        background-size: cover !important;
+        background-position: center !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        margin: -60px -15px 0;
+        background-color: #fff8f3; /* Your menu page's background color */
+    }
+
+    .register-card {
+        background: #fff; /* Pure white background for the card */
+        border-radius: 15px;
+        padding: 40px;
+        width: 100%;
+        max-width: 500px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    .register-header {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+        .register-header h1 {
+            font-size: 2.8rem;
+            color: #2c1810;
+            margin-bottom: 15px;
+        }
+
+        .register-header p {
+            color: #666;
+            font-size: 1.2rem;
+        }
+
+    .form-group {
+        margin-bottom: 25px;
+    }
+
+    .form-label {
+        display: block;
+        color: #2c1810;
+        font-size: 0.95rem;
+        margin-bottom: 8px;
+        font-weight: 500;
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 12px 20px;
+        border: 2px solid #e1d5c9;
+        border-radius: 12px;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        background: rgba(255, 255, 255, 0.9);
+    }
+
+        .form-control:focus {
+            outline: none;
+            border-color: #c0a080;
+            box-shadow: 0 0 0 4px rgba(192, 160, 128, 0.1);
+        }
+
+    .password-group {
+        position: relative;
+    }
+
+    .password-toggle {
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: none;
+        border: none;
+        color: #666;
+        cursor: pointer;
+        padding: 5px;
+    }
+
+    #registerSubmit {
+        width: 100%;
+        padding: 14px;
+        background-color: #c0a080;
+        color: white;
+        border: none;
+        border-radius: 12px;
+        font-size: 1.1rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin-top: 10px;
+    }
+
+        #registerSubmit:hover {
+            background-color: #ad8e6e;
+            transform: translateY(-2px);
+        }
+
+    .text-danger {
+        color: #ff6b6b;
+        font-size: 0.85rem;
+        margin-top: 5px;
+        display: block;
+    }
+
+    .validation-summary {
+        background-color: #fff1f1;
+        border-left: 4px solid #ff6b6b;
+        padding: 15px;
+        margin-bottom: 25px;
+        border-radius: 8px;
+    }
+
+    .external-auth-section {
+        margin-top: 30px;
+        text-align: center;
+        padding-top: 20px;
+        border-top: 2px solid #e1d5c9;
+    }
+
+        .external-auth-section h3 {
+            color: #2c1810;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+    .btn-external {
+        padding: 10px 25px;
+        border: 2px solid #c0a080;
+        background-color: #fff;
+        color: #2c1810;
+        border-radius: 25px;
+        cursor: pointer;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        margin: 5px;
+    }
+
+        .btn-external:hover {
+            background-color: #c0a080;
+            color: #fff;
+        }
+
+    @@media (max-width: 768px) {
+        .register-card {
+            padding: 25px;
+        }
+
+        .register-header h1 {
+            font-size: 2rem;
+        }
+    }
+</style>
+
+<div class="register-container">
+    <div class="register-card">
+        <div class="register-header">
+            <h1>Join Brew Haven</h1>
+            <p>Create your account and start your coffee journey</p>
+        </div>
+
+        <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger validation-summary" role="alert"></div>
+
+            <div class="form-group">
+                <label class="form-label" asp-for="Input.Username">Username</label>
+                <input asp-for="Input.Username" class="form-control" autocomplete="username"
+                       aria-required="true" placeholder="Username" />
+                <span asp-validation-for="Input.Username" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="form-label" asp-for="Input.Email">Email Address</label>
+                <input asp-for="Input.Email" class="form-control" autocomplete="username"
+                       aria-required="true" placeholder="your@email.com" />
+                <span asp-validation-for="Input.Email" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" asp-for="Input.Password">Password</label>
+                <div class="password-group">
+                    <input asp-for="Input.Password" class="form-control" autocomplete="new-password"
+                           aria-required="true" placeholder="Create a strong password" />
+                    <button type="button" class="password-toggle" onclick="togglePassword('Input_Password')">
+                        <i class="fas fa-eye"></i>
+                    </button>
+                </div>
+                <span asp-validation-for="Input.Password" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" asp-for="Input.ConfirmPassword">Confirm Password</label>
+                <div class="password-group">
+                    <input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password"
+                           aria-required="true" placeholder="Confirm your password" />
+                    <button type="button" class="password-toggle" onclick="togglePassword('Input_ConfirmPassword')">
+                        <i class="fas fa-eye"></i>
+                    </button>
+                </div>
+                <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+            </div>
+
+            <button id="registerSubmit" type="submit">Create Account</button>
+        </form>
+
+        @if ((Model.ExternalLogins?.Count ?? 0) > 0)
+        {
+            <div class="external-auth-section">
+                <h3>Or continue with</h3>
+                <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+                    @foreach (var provider in Model.ExternalLogins!)
+                    {
+                        <button type="submit" class="btn-external"
+                                name="provider" value="@provider.Name"
+                                title="Log in using your @provider.DisplayName account">
+                            @provider.DisplayName
+                        </button>
+                    }
+                </form>
+            </div>
+        }
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        function togglePassword(fieldId) {
+            const passwordField = document.getElementById(fieldId);
+            const button = event.currentTarget;
+            const icon = button.querySelector('i');
+
+            if (passwordField.type === 'password') {
+                passwordField.type = 'text';
+                icon.classList.remove('fa-eye');
+                icon.classList.add('fa-eye-slash');
+            } else {
+                passwordField.type = 'password';
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
+            }
+        }
+    </script>
+}

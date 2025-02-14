@@ -1,0 +1,245 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\GLORIOUS\\Downloads\\Coffee Store\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0160D895-1D5D-451B-B5BD-B9B0120890CE}|Coffee Store\\Coffee Store.csproj|c:\\users\\glorious\\downloads\\coffee store\\coffee store\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0160D895-1D5D-451B-B5BD-B9B0120890CE}|Coffee Store\\Coffee Store.csproj|solutionrelative:coffee store\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0160D895-1D5D-451B-B5BD-B9B0120890CE}|Coffee Store\\Coffee Store.csproj|c:\\users\\glorious\\downloads\\coffee store\\coffee store\\models\\menuitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0160D895-1D5D-451B-B5BD-B9B0120890CE}|Coffee Store\\Coffee Store.csproj|solutionrelative:coffee store\\models\\menuitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0160D895-1D5D-451B-B5BD-B9B0120890CE}|Coffee Store\\Coffee Store.csproj|c:\\users\\glorious\\downloads\\coffee store\\coffee store\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0160D895-1D5D-451B-B5BD-B9B0120890CE}|Coffee Store\\Coffee Store.csproj|solutionrelative:coffee store\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0160D895-1D5D-451B-B5BD-B9B0120890CE}|Coffee Store\\Coffee Store.csproj|c:\\users\\glorious\\downloads\\coffee store\\coffee store\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0160D895-1D5D-451B-B5BD-B9B0120890CE}|Coffee Store\\Coffee Store.csproj|solutionrelative:coffee store\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0160D895-1D5D-451B-B5BD-B9B0120890CE}|Coffee Store\\Coffee Store.csproj|c:\\users\\glorious\\downloads\\coffee store\\coffee store\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0160D895-1D5D-451B-B5BD-B9B0120890CE}|Coffee Store\\Coffee Store.csproj|solutionrelative:coffee store\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0160D895-1D5D-451B-B5BD-B9B0120890CE}|Coffee Store\\Coffee Store.csproj|c:\\users\\glorious\\downloads\\coffee store\\coffee store\\views\\menuitems\\detailslist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0160D895-1D5D-451B-B5BD-B9B0120890CE}|Coffee Store\\Coffee Store.csproj|solutionrelative:coffee store\\views\\menuitems\\detailslist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0160D895-1D5D-451B-B5BD-B9B0120890CE}|Coffee Store\\Coffee Store.csproj|c:\\users\\glorious\\downloads\\coffee store\\coffee store\\views\\menuitems\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0160D895-1D5D-451B-B5BD-B9B0120890CE}|Coffee Store\\Coffee Store.csproj|solutionrelative:coffee store\\views\\menuitems\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0160D895-1D5D-451B-B5BD-B9B0120890CE}|Coffee Store\\Coffee Store.csproj|c:\\users\\glorious\\downloads\\coffee store\\coffee store\\controllers\\menuitemscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0160D895-1D5D-451B-B5BD-B9B0120890CE}|Coffee Store\\Coffee Store.csproj|solutionrelative:coffee store\\controllers\\menuitemscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0160D895-1D5D-451B-B5BD-B9B0120890CE}|Coffee Store\\Coffee Store.csproj|c:\\users\\glorious\\downloads\\coffee store\\coffee store\\views\\menuitems\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0160D895-1D5D-451B-B5BD-B9B0120890CE}|Coffee Store\\Coffee Store.csproj|solutionrelative:coffee store\\views\\menuitems\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0160D895-1D5D-451B-B5BD-B9B0120890CE}|Coffee Store\\Coffee Store.csproj|c:\\users\\glorious\\downloads\\coffee store\\coffee store\\areas\\identity\\pages\\account\\login.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0160D895-1D5D-451B-B5BD-B9B0120890CE}|Coffee Store\\Coffee Store.csproj|solutionrelative:coffee store\\areas\\identity\\pages\\account\\login.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0160D895-1D5D-451B-B5BD-B9B0120890CE}|Coffee Store\\Coffee Store.csproj|c:\\users\\glorious\\downloads\\coffee store\\coffee store\\views\\menuitems\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0160D895-1D5D-451B-B5BD-B9B0120890CE}|Coffee Store\\Coffee Store.csproj|solutionrelative:coffee store\\views\\menuitems\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0160D895-1D5D-451B-B5BD-B9B0120890CE}|Coffee Store\\Coffee Store.csproj|c:\\users\\glorious\\downloads\\coffee store\\coffee store\\views\\menuitems\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0160D895-1D5D-451B-B5BD-B9B0120890CE}|Coffee Store\\Coffee Store.csproj|solutionrelative:coffee store\\views\\menuitems\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0160D895-1D5D-451B-B5BD-B9B0120890CE}|Coffee Store\\Coffee Store.csproj|c:\\users\\glorious\\downloads\\coffee store\\coffee store\\views\\menuitems\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0160D895-1D5D-451B-B5BD-B9B0120890CE}|Coffee Store\\Coffee Store.csproj|solutionrelative:coffee store\\views\\menuitems\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Error.cshtml",
+              "DocumentMoniker": "C:\\Users\\GLORIOUS\\Downloads\\Coffee Store\\Coffee Store\\Views\\Shared\\Error.cshtml",
+              "RelativeDocumentMoniker": "Coffee Store\\Views\\Shared\\Error.cshtml",
+              "ToolTip": "C:\\Users\\GLORIOUS\\Downloads\\Coffee Store\\Coffee Store\\Views\\Shared\\Error.cshtml",
+              "RelativeToolTip": "Coffee Store\\Views\\Shared\\Error.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-14T11:02:42.446Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "_ValidationScriptsPartial.cshtml",
+              "DocumentMoniker": "C:\\Users\\GLORIOUS\\Downloads\\Coffee Store\\Coffee Store\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeDocumentMoniker": "Coffee Store\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ToolTip": "C:\\Users\\GLORIOUS\\Downloads\\Coffee Store\\Coffee Store\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeToolTip": "Coffee Store\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-14T11:02:40.467Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "_LoginPartial.cshtml",
+              "DocumentMoniker": "C:\\Users\\GLORIOUS\\Downloads\\Coffee Store\\Coffee Store\\Views\\Shared\\_LoginPartial.cshtml",
+              "RelativeDocumentMoniker": "Coffee Store\\Views\\Shared\\_LoginPartial.cshtml",
+              "ToolTip": "C:\\Users\\GLORIOUS\\Downloads\\Coffee Store\\Coffee Store\\Views\\Shared\\_LoginPartial.cshtml",
+              "RelativeToolTip": "Coffee Store\\Views\\Shared\\_LoginPartial.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-14T10:55:49.886Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\GLORIOUS\\Downloads\\Coffee Store\\Coffee Store\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Coffee Store\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\GLORIOUS\\Downloads\\Coffee Store\\Coffee Store\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Coffee Store\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAIgAAAAAAAAAAAAAAJkAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-14T10:53:33.977Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MenuItem.cs",
+              "DocumentMoniker": "C:\\Users\\GLORIOUS\\Downloads\\Coffee Store\\Coffee Store\\Models\\MenuItem.cs",
+              "RelativeDocumentMoniker": "Coffee Store\\Models\\MenuItem.cs",
+              "ToolTip": "C:\\Users\\GLORIOUS\\Downloads\\Coffee Store\\Coffee Store\\Models\\MenuItem.cs",
+              "RelativeToolTip": "Coffee Store\\Models\\MenuItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-14T10:51:43.125Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "DetailsList.cshtml",
+              "DocumentMoniker": "C:\\Users\\GLORIOUS\\Downloads\\Coffee Store\\Coffee Store\\Views\\MenuItems\\DetailsList.cshtml",
+              "RelativeDocumentMoniker": "Coffee Store\\Views\\MenuItems\\DetailsList.cshtml",
+              "ToolTip": "C:\\Users\\GLORIOUS\\Downloads\\Coffee Store\\Coffee Store\\Views\\MenuItems\\DetailsList.cshtml",
+              "RelativeToolTip": "Coffee Store\\Views\\MenuItems\\DetailsList.cshtml",
+              "ViewState": "AgIAAL4AAAAAAAAAAAAAAN0AAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-14T10:49:53.28Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "C:\\Users\\GLORIOUS\\Downloads\\Coffee Store\\Coffee Store\\Views\\MenuItems\\Delete.cshtml",
+              "RelativeDocumentMoniker": "Coffee Store\\Views\\MenuItems\\Delete.cshtml",
+              "ToolTip": "C:\\Users\\GLORIOUS\\Downloads\\Coffee Store\\Coffee Store\\Views\\MenuItems\\Delete.cshtml",
+              "RelativeToolTip": "Coffee Store\\Views\\MenuItems\\Delete.cshtml",
+              "ViewState": "AgIAAKgAAAAAAAAAAAAAALIAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-14T10:26:45.497Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\GLORIOUS\\Downloads\\Coffee Store\\Coffee Store\\Views\\MenuItems\\Index.cshtml",
+              "RelativeDocumentMoniker": "Coffee Store\\Views\\MenuItems\\Index.cshtml",
+              "ToolTip": "C:\\Users\\GLORIOUS\\Downloads\\Coffee Store\\Coffee Store\\Views\\MenuItems\\Index.cshtml",
+              "RelativeToolTip": "Coffee Store\\Views\\MenuItems\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-14T09:25:44.53Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\GLORIOUS\\Downloads\\Coffee Store\\Coffee Store\\Views\\MenuItems\\Details.cshtml",
+              "RelativeDocumentMoniker": "Coffee Store\\Views\\MenuItems\\Details.cshtml",
+              "ToolTip": "C:\\Users\\GLORIOUS\\Downloads\\Coffee Store\\Coffee Store\\Views\\MenuItems\\Details.cshtml",
+              "RelativeToolTip": "Coffee Store\\Views\\MenuItems\\Details.cshtml",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAkwCIAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-14T09:19:45.544Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\GLORIOUS\\Downloads\\Coffee Store\\Coffee Store\\Views\\MenuItems\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Coffee Store\\Views\\MenuItems\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\GLORIOUS\\Downloads\\Coffee Store\\Coffee Store\\Views\\MenuItems\\Edit.cshtml",
+              "RelativeToolTip": "Coffee Store\\Views\\MenuItems\\Edit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-14T09:16:54.242Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\GLORIOUS\\Downloads\\Coffee Store\\Coffee Store\\Views\\MenuItems\\Create.cshtml",
+              "RelativeDocumentMoniker": "Coffee Store\\Views\\MenuItems\\Create.cshtml",
+              "ToolTip": "C:\\Users\\GLORIOUS\\Downloads\\Coffee Store\\Coffee Store\\Views\\MenuItems\\Create.cshtml",
+              "RelativeToolTip": "Coffee Store\\Views\\MenuItems\\Create.cshtml",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAAAEgAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-14T09:13:14.797Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "MenuItemsController.cs",
+              "DocumentMoniker": "C:\\Users\\GLORIOUS\\Downloads\\Coffee Store\\Coffee Store\\Controllers\\MenuItemsController.cs",
+              "RelativeDocumentMoniker": "Coffee Store\\Controllers\\MenuItemsController.cs",
+              "ToolTip": "C:\\Users\\GLORIOUS\\Downloads\\Coffee Store\\Coffee Store\\Controllers\\MenuItemsController.cs",
+              "RelativeToolTip": "Coffee Store\\Controllers\\MenuItemsController.cs",
+              "ViewState": "AgIAAEcAAAAAAAAAAADgv1MAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-14T09:16:01.161Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Login.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\GLORIOUS\\Downloads\\Coffee Store\\Coffee Store\\Areas\\Identity\\Pages\\Account\\Login.cshtml.cs",
+              "RelativeDocumentMoniker": "Coffee Store\\Areas\\Identity\\Pages\\Account\\Login.cshtml.cs",
+              "ToolTip": "C:\\Users\\GLORIOUS\\Downloads\\Coffee Store\\Coffee Store\\Areas\\Identity\\Pages\\Account\\Login.cshtml.cs",
+              "RelativeToolTip": "Coffee Store\\Areas\\Identity\\Pages\\Account\\Login.cshtml.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAvwCwAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-14T08:55:04.295Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

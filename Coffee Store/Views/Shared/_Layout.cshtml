@@ -1,0 +1,269 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManage
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Coffee_Store</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="~/Coffee_Store.styles.css" asp-append-version="true" />
+    <style>
+        :root {
+            --primary: #2c1810;
+            --secondary: #c0a080;
+            --light: #fff8f3;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            background: linear-gradient(to right, var(--primary), #4a2c1f) !important;
+            padding: 1rem 0;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            width: 100%;
+        }
+
+        .navbar-brand {
+            color: var(--secondary) !important;
+            font-size: 1.5rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            padding-left: 2rem;
+        }
+
+            .navbar-brand:hover {
+                transform: translateY(-2px);
+            }
+
+        .nav-link {
+            color: white !important;
+            font-weight: 500;
+            padding: 0.5rem 1rem !important;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            margin: 0 ;
+        }
+
+            .nav-link:hover {
+                color: var(--secondary) !important;
+                transform: translateY(-2px);
+            }
+
+        .navbar-toggler {
+            border-color: rgba(255,255,255,0.5);
+        }
+
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.5)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+
+        main {
+            flex: 1;
+            padding: 2rem 0;
+            width: 100%;
+        }
+
+        .footer {
+            background: linear-gradient(to right, var(--primary), #4a2c1f);
+            color: white !important;
+            padding: 1rem 0;
+            margin-top: auto;
+            width: 100%;
+        }
+
+            .footer a {
+                color: var(--secondary) !important;
+                text-decoration: none;
+                transition: all 0.3s ease;
+            }
+
+                .footer a:hover {
+                    color: white !important;
+                }
+
+        .user-info {
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            background: rgba(255,255,255,0.1);
+            margin-left: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+            .user-info i {
+                color: var(--secondary);
+            }
+
+        .profile-info {
+            color: white;
+            opacity: 0.8;
+            font-size: 0.9rem;
+            margin-left:0.5rem;
+            
+        }
+
+        @@media (max-width: 576px) {
+            .user-info
+
+        {
+            margin: 1rem 0;
+        }
+
+        }
+
+        .header-container {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container-fluid {
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+
+        .auth-buttons .nav-link {
+            margin: 0 !important;
+            padding: 0.5rem 1.5rem !important;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="header">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                    <i class="fas fa-coffee"></i> Coffee Store
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">
+                                <i class="fas fa-home"></i> Home
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="MenuItems" asp-action="Index">
+                                <i class="fas fa-mug-hot"></i> Menu Items
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Orders" asp-action="Index">
+                                <i class="fas fa-shopping-cart"></i> Orders
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Users" asp-action="Index">
+                                <i class="fas fa-users"></i> Users
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy">
+                                <i class="fas fa-shield-alt"></i> Privacy
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- Update the user-info div in your navbar with this code -->
+                    <partial name="_LoginPartial" />
+                    @if (SignInManager.IsSignedIn(User))
+                    {
+                        <div class="user-info d-none d-sm-flex dropdown">
+                            <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-user-circle"></i>
+                                <span class="profile-info">
+                                    Profile
+                                </span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                                <li class="dropdown-header">
+                                    <i class="fas fa-user"></i> Account
+                                </li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li>
+                                    <a class="dropdown-item" asp-area="Identity" asp-page="/Account/Manage/Index">
+                                        <i class="fas fa-cog"></i> Settings
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" asp-area="Identity" asp-page="/Account/Manage/ChangePassword">
+                                        <i class="fas fa-key"></i> Change Password
+                                    </a>
+                                </li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li>
+                                    <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                                        <button type="submit" class="dropdown-item text-danger">
+                                            <i class="fas fa-sign-out-alt"></i> Logout
+                                        </button>
+                                    </form>
+                                </li>
+                            </ul>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="auth-buttons d-none d-sm-flex">
+                            <a class="nav-link auth-link login-link" asp-area="Identity" asp-page="/Account/Login" style="margin-top: 0 !important;">
+                                <i class="fas fa-sign-in-alt"></i> Login
+                            </a>
+                            <a class="nav-link auth-link register-link" asp-area="Identity" asp-page="/Account/Register">
+                                <i class="fas fa-user-plus"></i> Register
+                            </a>
+                        </div>
+                    }
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    @RenderBody()
+    <main role="main" class="container">
+        @RenderBody()
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            &copy; @DateTime.Now.Year - Coffee Store -
+            <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            <span class="float-end">
+                <i class="fas fa-clock"></i> UTC: @DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss")
+            </span>
+        </div>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPath = window.location.pathname.toLowerCase();
+            document.querySelectorAll('.nav-link').forEach(link => {
+                if (link.getAttribute('href').toLowerCase() === currentPath) {
+                    link.style.backgroundColor = 'rgba(255,255,255,0.1)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

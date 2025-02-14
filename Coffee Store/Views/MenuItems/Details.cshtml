@@ -1,0 +1,252 @@
+﻿@model Coffee_Store.Models.MenuItem
+
+<style>
+    .details-container {
+        padding: 40px 20px;
+        max-width: 800px;
+        margin: 0 auto;
+        background-color: #fff8f3;
+    }
+
+    .details-header {
+        text-align: center;
+        margin-bottom: 40px;
+        position: relative;
+    }
+
+        .details-header h1 {
+            color: #2c1810;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+    .valentine-badge {
+        position: absolute;
+        top: -15px;
+        right: -15px;
+        background: linear-gradient(135deg, #ff6b6b, #c0a080);
+        color: white;
+        padding: 8px 15px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        animation: pulse 2s infinite;
+    }
+
+    @@keyframes pulse {
+        0%
+
+    {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+
+    }
+
+    .item-details {
+        background: white;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .item-image-container {
+        text-align: center;
+        margin: -30px -30px 30px -30px;
+        background: #f8f8f8;
+        padding: 30px;
+        position: relative;
+    }
+
+    .item-image {
+        max-width: 100%;
+        height: auto;
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease;
+    }
+
+        .item-image:hover {
+            transform: scale(1.02);
+        }
+
+    .detail-row {
+        margin-bottom: 25px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #e1d5c9;
+        display: flex;
+        flex-direction: column;
+    }
+
+        .detail-row:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+    .detail-label {
+        font-weight: 600;
+        color: #2c1810;
+        margin-bottom: 8px;
+        font-size: 1.1rem;
+    }
+
+    .detail-value {
+        color: #666;
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
+
+    .price-value {
+        color: #c0a080;
+        font-size: 1.4rem;
+        font-weight: 600;
+    }
+
+    .category-badge {
+        display: inline-block;
+        background-color: #fff8f3;
+        color: #c0a080;
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-weight: 500;
+    }
+
+    .buttons-container {
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .btn {
+        padding: 12px 25px;
+        border-radius: 12px;
+        font-size: 1.1rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .btn-back {
+        background-color: transparent;
+        color: #2c1810;
+        border: 2px solid #c0a080;
+    }
+
+        .btn-back:hover {
+            background-color: #c0a080;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+    .btn-edit {
+        background-color: #c0a080;
+        color: white;
+        border: none;
+    }
+
+        .btn-edit:hover {
+            background-color: #ad8e6e;
+            transform: translateY(-2px);
+        }
+
+    .btn-delete {
+        background-color: #ff6b6b;
+        color: white;
+        border: none;
+    }
+
+        .btn-delete:hover {
+            background-color: #ff5252;
+            transform: translateY(-2px);
+        }
+
+    .created-by {
+        text-align: right;
+        margin-top: 20px;
+        color: #666;
+        font-size: 0.9rem;
+    }
+</style>
+
+<div class="details-container">
+    <div class="details-header">
+        <h1>Menu Item Details</h1>
+        @if (DateTime.UtcNow.Date == new DateTime(2025, 2, 14))
+        {
+            <span class="valentine-badge">❤️ Valentine's Special</span>
+        }
+    </div>
+
+    <div class="item-details">
+        @if (!string.IsNullOrEmpty(Model.Image))
+        {
+            <div class="item-image-container">
+                <img src="@Model.Image" alt="@Model.Name" class="item-image"
+                     onerror="this.src='/images/default-menu-item.jpg';" />
+            </div>
+        }
+
+        <div class="detail-row">
+            <span class="detail-label">Name</span>
+            <span class="detail-value">@Model.Name</span>
+        </div>
+
+        <div class="detail-row">
+            <span class="detail-label">Description</span>
+            <span class="detail-value">@Model.Description</span>
+        </div>
+
+        <div class="detail-row">
+            <span class="detail-label">Price</span>
+            <span class="detail-value price-value">$@Model.Price.ToString("F2")</span>
+        </div>
+
+        <div class="detail-row">
+            <span class="detail-label">Category</span>
+            <span class="detail-value">
+                <span class="category-badge">@Model.Category</span>
+            </span>
+        </div>
+
+        <div class="buttons-container">
+            <a asp-action="Index" class="btn btn-back">
+                <i class="fas fa-arrow-left"></i> Back to Menu
+            </a>
+            <a asp-action="Edit" asp-route-id="@Model.MenuItemId" class="btn btn-edit">
+                <i class="fas fa-edit"></i> Edit
+            </a>
+            <a asp-action="Delete" asp-route-id="@Model.MenuItemId" class="btn btn-delete">
+                <i class="fas fa-trash"></i> Delete
+            </a>
+        </div>
+
+        <div class="created-by">
+            Added by: @User.Identity?.Name
+            <br />
+            Last Updated: @DateTime.UtcNow.ToString("MMMM dd, yyyy")
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        // Add smooth scrolling to the page
+        document.addEventListener('DOMContentLoaded', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+}
