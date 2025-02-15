@@ -1,53 +1,296 @@
 ﻿@model IEnumerable<Coffee_Store.Models.User>
-
+<div class="alert alert-info">
+    <p>Total Users: @Model.Count()</p>
+    <p>Current Time: @DateTime.UtcNow</p>
+    <p>DbContext Type: @((Coffee_Store.Data.ApplicationDbContext)ViewContext.HttpContext.RequestServices.GetService(typeof(Coffee_Store.Data.ApplicationDbContext)))?.GetType().FullName</p>
+</div>
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "User Management";
 }
 
-<h1>Index</h1>
+<div class="admin-container">
+    <div class="admin-header">
+        <div class="header-content">
+            <div class="title-section">
+                <h1><i class="fas fa-users-cog"></i> User Management</h1>
+                <p class="admin-subtitle">Welcome back, @User.Identity.Name</p>
+            </div>
+            <div class="action-section">
+                <div class="current-time">
+                    <i class="far fa-clock"></i>
+                    <span id="currentTime">@DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss")</span>
+                </div>
+                <a asp-action="Create" class="btn btn-create">
+                    <i class="fas fa-user-plus"></i> New User
+                </a>
+            </div>
+        </div>
+    </div>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Email)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Password)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CreatedAt)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Password)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CreatedAt)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.UserId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.UserId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.UserId">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+    <div class="admin-content">
+        @if (TempData["Success"] != null)
+        {
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <i class="fas fa-check-circle"></i> @TempData["Success"]
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        }
+
+        <div class="card user-card">
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table table-hover user-table">
+                        <thead>
+                            <tr>
+                                <th><i class="fas fa-id-badge"></i> ID</th>
+                                <th><i class="fas fa-user"></i> Name</th>
+                                <th><i class="fas fa-envelope"></i> Email</th>
+                                <th><i class="fas fa-calendar-alt"></i> Created At</th>
+                                <th><i class="fas fa-cogs"></i> Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var user in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        <span class="user-id">@user.UserId</span>
+                                    </td>
+                                    <td>
+                                        <div class="user-info">
+                                            <span class="user-name">@user.Name</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span class="user-email">@user.Email</span>
+                                    </td>
+                                    <td>
+                                        <span class="created-date">
+                                            <i class="far fa-calendar"></i>
+                                            @user.CreatedAt.ToString("yyyy-MM-dd")
+                                            <br />
+                                            <small class="text-muted">
+                                                <i class="far fa-clock"></i>
+                                                @user.CreatedAt.ToString("HH:mm:ss")
+                                            </small>
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <a asp-action="Edit" asp-route-id="@user.UserId" class="btn btn-sm btn-edit">
+                                                <i class="fas fa-edit"></i>
+                                            </a>
+                                            <a asp-action="Details" asp-route-id="@user.UserId" class="btn btn-sm btn-details">
+                                                <i class="fas fa-info-circle"></i>
+                                            </a>
+                                            <a asp-action="Delete" asp-route-id="@user.UserId" class="btn btn-sm btn-delete">
+                                                <i class="fas fa-trash-alt"></i>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .admin-container {
+        padding: 20px;
+        background-color: #f8f9fa;
+        min-height: calc(100vh - 60px);
+    }
+
+    .admin-header {
+        background: linear-gradient(135deg, #3c1810 0%, #8B4513 100%);
+        padding: 25px;
+        border-radius: 15px;
+        margin-bottom: 25px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .title-section h1 {
+        color: #fff;
+        font-size: 2rem;
+        margin: 0;
+    }
+
+    .admin-subtitle {
+        color: #D2B48C;
+        margin-top: 5px;
+        font-size: 1rem;
+    }
+
+    .action-section {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .current-time {
+        color: #D2B48C;
+        font-size: 0.9rem;
+        background: rgba(255,255,255,0.1);
+        padding: 8px 15px;
+        border-radius: 8px;
+    }
+
+    .btn-create {
+        background-color: #D2691E;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+    }
+
+        .btn-create:hover {
+            background-color: #8B4513;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+    .user-card {
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    }
+
+    .user-table {
+        margin-bottom: 0;
+    }
+
+        .user-table thead th {
+            background-color: #f8f9fa;
+            border-bottom: 2px solid #dee2e6;
+            padding: 15px;
+            font-weight: 600;
+            color: #3c1810;
+        }
+
+        .user-table tbody tr {
+            transition: all 0.3s ease;
+        }
+
+            .user-table tbody tr:hover {
+                background-color: #fff5e6;
+            }
+
+    .user-id {
+        font-weight: 600;
+        color: #3c1810;
+    }
+
+    .user-info {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .user-name {
+        font-weight: 500;
+        color: #333;
+    }
+
+    .user-email {
+        color: #666;
+    }
+
+    .created-date {
+        font-size: 0.9rem;
+        color: #666;
+    }
+
+    .action-buttons {
+        display: flex;
+        gap: 8px;
+    }
+
+    .btn-edit, .btn-details, .btn-delete {
+        width: 32px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 6px;
+        transition: all 0.3s ease;
+    }
+
+    .btn-edit {
+        background-color: #D2691E;
+        color: white;
+    }
+
+    .btn-details {
+        background-color: #3c1810;
+        color: white;
+    }
+
+    .btn-delete {
+        background-color: #dc3545;
+        color: white;
+    }
+
+        .btn-edit:hover, .btn-details:hover, .btn-delete:hover {
+            transform: translateY(-2px);
+            color: white;
+        }
+
+    .alert {
+        border-radius: 10px;
+        border: none;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    }
+
+    .alert-success {
+        background-color: #d4edda;
+        color: #155724;
+    }
+
+    @@media (max-width: 768px) {
+        .header-content
+
+    {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .action-section {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .current-time {
+        text-align: center;
+    }
+
+    }
+</style>
+
+<script>
+    // Update current time
+    function updateTime() {
+        const timeElement = document.getElementById('currentTime');
+        const now = new Date();
+        const formattedTime = now.getUTCFullYear() + '-' +
+                            String(now.getUTCMonth() + 1).padStart(2, '0') + '-' +
+                            String(now.getUTCDate()).padStart(2, '0') + ' ' +
+                            String(now.getUTCHours()).padStart(2, '0') + ':' +
+                            String(now.getUTCMinutes()).padStart(2, '0') + ':' +
+                            String(now.getUTCSeconds()).padStart(2, '0');
+        timeElement.textContent = formattedTime;
+    }
+
+    setInterval(updateTime, 1000);
+    updateTime();
+</script>

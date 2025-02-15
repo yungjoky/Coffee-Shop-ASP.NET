@@ -295,3 +295,4 @@ C:\Users\GLORIOUS\Downloads\Coffee Store\Coffee Store\obj\Debug\net8.0\Coffee St
 C:\Users\GLORIOUS\Downloads\Coffee Store\Coffee Store\obj\Debug\net8.0\Coffee Store.genruntimeconfig.cache
 C:\Users\GLORIOUS\Downloads\Coffee Store\Coffee Store\obj\Debug\net8.0\ref\Coffee Store.dll
 C:\Users\GLORIOUS\Downloads\Coffee Store\Coffee Store\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\GLORIOUS\Downloads\Coffee Store\Coffee Store\obj\Debug\net8.0\Coffee Store.sourcelink.json

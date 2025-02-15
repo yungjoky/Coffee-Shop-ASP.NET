@@ -1,0 +1,92 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Profile";
+    ViewData["ActivePage"] = ManageNavPages.Index;
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <h2 class="mb-4" style="color: #2c1810;">@ViewData["Title"]</h2>
+        <partial name="_StatusMessage" for="StatusMessage" />
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="card border-0 shadow-sm">
+            <div class="card-body p-4">
+                <form id="profile-form" method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+                    <div class="mb-4">
+                        <label asp-for="Username" class="form-label">Username</label>
+                        <input asp-for="Username" class="form-control" disabled />
+                    </div>
+                    <div class="mb-4">
+                        <label asp-for="Input.PhoneNumber" class="form-label">Phone number</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                            <input asp-for="Input.PhoneNumber" class="form-control" />
+                        </div>
+                        <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
+                    </div>
+                    <div class="mb-4">
+                        <label asp-for="Input.Email" class="form-label">Email</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                            <input asp-for="Input.Email" class="form-control" />
+                            @if (Model.Input.EmailConfirmed)
+                            {
+                                <span class="input-group-text text-success">
+                                    <i class="fas fa-check-circle"></i>
+                                </span>
+                            }
+                        </div>
+                        <span asp-validation-for="Input.Email" class="text-danger"></span>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card border-0 shadow-sm">
+            <div class="card-body p-4">
+                <h3 class="h5 mb-3" style="color: #2c1810;">Profile Status</h3>
+                <div class="mb-3">
+                    <div class="d-flex align-items-center mb-2">
+                        <i class="fas fa-envelope-circle-check me-2" style="color: #c0a080;"></i>
+                        <span>Email Status:</span>
+                    </div>
+                    @if (Model.Input.EmailConfirmed)
+                    {
+                        <span class="badge bg-success">Verified</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-warning">Pending Verification</span>
+                    }
+                </div>
+                <div class="mb-3">
+                    <div class="d-flex align-items-center mb-2">
+                        <i class="fas fa-shield-alt me-2" style="color: #c0a080;"></i>
+                        <span>Two-Factor Auth:</span>
+                    </div>
+                    @if (Model.Input.TwoFactorEnabled)
+                    {
+                        <span class="badge bg-success">Enabled</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-secondary">Disabled</span>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

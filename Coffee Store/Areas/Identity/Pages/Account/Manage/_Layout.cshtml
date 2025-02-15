@@ -1,0 +1,128 @@
+﻿@{
+    Layout = "/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid manage-account-container py-4">
+    <div class="row">
+        <!-- Sidebar -->
+        <div class="col-md-3">
+            <div class="account-sidebar p-4 rounded-3">
+                <div class="user-profile text-center mb-4">
+                    <i class="fas fa-user-circle fa-4x mb-3" style="color: #c0a080;"></i>
+                    <h5 class="mb-2">@User.Identity?.Name</h5>
+                    <p class="text-muted small">Member since @DateTime.UtcNow.ToString("MMM yyyy")</p>
+                </div>
+                <hr class="my-4" style="border-color: #c0a080;">
+                <partial name="_ManageNav" />
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="col-md-9">
+            <div class="content-area p-4 rounded-3">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .manage-account-container {
+        min-height: calc(100vh - 150px);
+        background: linear-gradient(135deg, #fff 0%, #f2e9de 100%);
+    }
+
+    .account-sidebar {
+        background-color: white;
+        box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+        height: 100%;
+    }
+
+    .content-area {
+        background-color: white;
+        box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+    }
+
+    /* Navigation Styling */
+    .nav-pills .nav-link {
+        color: #2c1810;
+        padding: 0.75rem 1rem;
+        margin-bottom: 0.5rem;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+    }
+
+    .nav-pills .nav-link:hover {
+        background-color: #f2e9de;
+    }
+
+    .nav-pills .nav-link.active {
+        background-color: #c0a080;
+        color: white;
+    }
+
+    .nav-pills .nav-link i {
+        width: 24px;
+        text-align: center;
+        margin-right: 8px;
+        color: #c0a080;
+    }
+
+    .nav-pills .nav-link.active i {
+        color: white;
+    }
+
+    /* Form Styling */
+    .form-control, .form-select {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 0.75rem;
+    }
+
+    .form-control:focus, .form-select:focus {
+        border-color: #c0a080;
+        box-shadow: 0 0 0 0.2rem rgba(192, 160, 128, 0.25);
+    }
+
+    .btn-primary {
+        background-color: #c0a080;
+        border-color: #c0a080;
+        padding: 0.75rem 1.5rem;
+        border-radius: 8px;
+    }
+
+    .btn-primary:hover {
+        background-color: #a38a6d;
+        border-color: #a38a6d;
+    }
+
+    /* Status Messages */
+    .alert {
+        border-radius: 8px;
+        padding: 1rem;
+    }
+
+    .alert-success {
+        background-color: #e8f5e9;
+        border-color: #a5d6a7;
+        color: #1b5e20;
+    }
+
+    .validation-summary-errors {
+        color: #dc3545;
+        padding: 1rem;
+        background-color: #fff8f8;
+        border-radius: 8px;
+        margin-bottom: 1rem;
+    }
+
+    @@media (max-width: 768px) {
+        .account-sidebar {
+            margin-bottom: 2rem;
+        }
+    }
+</style>
+
+@section Scripts {
+    @RenderSection("Scripts", required: false)
+}
